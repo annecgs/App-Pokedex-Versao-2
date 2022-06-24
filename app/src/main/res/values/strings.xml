@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pokedex App</string>
+    <string name="title_home">Pokemons</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="BuscaPokemon">Digite o nome do pokemon</string>
+    <string name="name_pokemon">Nome do pokemon</string>
+    <string name="date">4 de março de 2022</string>
+</resources>

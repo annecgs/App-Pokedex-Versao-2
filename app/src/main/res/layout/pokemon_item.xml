@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/imagePokemon"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        tools:ignore="MissingConstraints"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical"
+        android:screenReaderFocusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagePokemon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008">
+
+        <TextView
+            android:id="@+id/nomePokemon"
+            android:layout_width="168dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="22dp"
+            android:text="Nome Pokemon"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imagePokemon"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/candyPokemon"
+            android:layout_width="161dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="20dp"
+            android:text="Candy Pokemon"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/imagePokemon"
+            app:layout_constraintTop_toBottomOf="@+id/nomePokemon"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/candyCount"
+            android:layout_width="161dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="9dp"
+            android:text="Candy Pokemon"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/imagePokemon"
+            app:layout_constraintTop_toBottomOf="@+id/candyPokemon"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
