@@ -5,7 +5,10 @@ import com.example.pokedexapp.network.IPokemonsClient
 import com.example.pokedexapp.network.RetrofitInstance
 import com.example.pokedexapp.repository.PokemonsRepository
 import com.example.pokedexapp.viewModel.MainViewModelFactory
-import java.util.ArrayList
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class Helpers {
     companion object {
@@ -27,6 +30,16 @@ class Helpers {
                 }
             }
             return newList
+        }
+
+        fun getCalendarDate(): String {
+            return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                val current = LocalDateTime.now()
+                val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
+                current.format(formatter)
+            } else {
+                SimpleDateFormat("d MMM yyyy", Locale("pt-BR", "Brazil", "")).format(Date())
+            }
         }
     }
 }
