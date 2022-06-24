@@ -6,4 +6,13 @@
     <string name="BuscaPokemon">Digite o nome do pokemon</string>
     <string name="name_pokemon">Nome do pokemon</string>
     <string name="date">4 de março de 2022</string>
+    <string name="go_back">Voltar</string>
+    <string name="add">Adicionar como favorito</string>
+    <string name="altura_pokemom">Altura do pokemom</string>
+    <string name="peso_pokemon">Peso do pokemon</string>
+    <string name="peso">Peso</string>
+    <string name="altura">Altura</string>
+    <string name="ovo">Ovo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

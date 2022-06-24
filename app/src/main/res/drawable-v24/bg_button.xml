@@ -5,6 +5,6 @@
     >
     <corners android:radius="16dp"/>
     <stroke android:color="@color/white" android:width="0.7dp"/>
-    <solid android:color="@color/primaryColor_splashAndDatails"/>
+    <solid android:color="#D8BFD8"/>
 
 </shape>

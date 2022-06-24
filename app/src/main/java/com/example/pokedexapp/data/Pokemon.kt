@@ -16,5 +16,6 @@ data class Pokemon(
     val spawn_time: String,
     val type: List<String>,
     val weaknesses: List<String>,
-    val weight: String
+    val weight: String,
+    var isFavorite: Boolean = false
 )

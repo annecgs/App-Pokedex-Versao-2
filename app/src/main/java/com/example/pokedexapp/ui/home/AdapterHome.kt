@@ -10,7 +10,7 @@ import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.databinding.PokemonItemBinding
 
 class AdapterHome : ListAdapter<Pokemon, AdapterHome.ViewHolder>(DIFF_CALLBACK) {
-    var onClickListener: ((coinId: Int) -> Unit)? = null
+    var onClickListener: ((pokemonId: Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = PokemonItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)

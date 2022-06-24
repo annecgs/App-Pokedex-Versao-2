@@ -1,20 +1,23 @@
 package com.example.pokedexapp.ui.dashboard
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.pokedexapp.databinding.FragmentDashboardBinding
+import androidx.fragment.app.activityViewModels
+import com.bumptech.glide.Glide
+import com.example.pokedexapp.databinding.FragmentInfoBinding
+import com.example.pokedexapp.utils.Helpers
+import com.example.pokedexapp.viewModel.MainViewModel
 
-class DashboardFragment : Fragment() {
+class InfoFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private val viewModel: MainViewModel by activityViewModels() { Helpers.getMainViewModelFactory() }
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentInfoBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,17 +25,64 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentInfoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        setupAdapter()
+
+        binding.btnReturn.setOnClickListener {
+            getActivity()?.onBackPressed()
         }
+
         return root
+    }
+
+    private fun setupAdapter() {
+
+        getData()
+    }
+
+    private fun getData() {
+        viewModel.pokemonSelected.observe(viewLifecycleOwner) { pokemon ->
+            val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return@observe
+            if (sharedPref.all.containsKey(pokemon.name)) {
+                binding.ivFavorite.visibility = View.VISIBLE
+                binding.btnAddFavorite.text = "REMOVER"
+            } else {
+                binding.ivFavorite.visibility = View.GONE
+                binding.btnAddFavorite.text = "ADICIONAR"
+            }
+
+            Log.d("CoinRecive", "onActivityCreated: $pokemon")
+            //binding.tvCandy.text = pokemon.candy
+            binding.tvPokemonNome.text = pokemon.name
+            binding.tvAltura.text = pokemon.height
+            binding.tvPeso.text = pokemon.weight
+            binding.tvOvo.text = pokemon.egg
+
+            Glide.with(binding.root.context)
+                .load(pokemon.img)
+                .into(binding.imageView)
+
+            binding.btnAddFavorite.setOnClickListener {
+                Log.d("Coin", "getData: $pokemon")
+                when (pokemon.isFavorite) {
+                    true -> { // Vai remover dos favoritos
+                        sharedPref.edit().remove(pokemon.name).apply()
+                        viewModel.setFavorite(false)
+                        binding.btnAddFavorite.text = "ADICIONAR"
+                        binding.ivFavorite.visibility = View.GONE
+                    }
+                    false -> { // Vai adicionar aos favoritos
+                        sharedPref.edit().putString(pokemon.name, pokemon.name).apply()
+                        viewModel.setFavorite(true)
+                        binding.btnAddFavorite.text = "REMOVER"
+                        binding.ivFavorite.visibility = View.VISIBLE
+                    }
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {

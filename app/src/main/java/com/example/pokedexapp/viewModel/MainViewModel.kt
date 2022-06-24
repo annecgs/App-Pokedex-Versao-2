@@ -16,13 +16,26 @@ import java.lang.Exception
 class MainViewModel(private val IpokemonsRepository: IPokemonsRepository) : ViewModel() {
     private val _pokemonsItem = MutableLiveData<PokemonApiResult<List<Pokemon>>>()
     val pokemonItem: LiveData<PokemonApiResult<List<Pokemon>>> = _pokemonsItem
+
+    private val _pokemonSelected = MutableLiveData<Pokemon>()
+    val pokemonSelected: LiveData<Pokemon> = _pokemonSelected
+
     var pokemonsFromApi: List<Pokemon> = ArrayList()
 
-    fun getData() {
+    fun setPokemon(pokemonId: Int) {
         viewModelScope.launch {
             _pokemonsItem.value = PokemonApiResult.Loading()
-            pokemonsFromApi = withContext(Dispatchers.IO) {
-                IpokemonsRepository.getPokedex()
+            try {
+                if (pokemonsFromApi.isNullOrEmpty()) {
+                    pokemonsFromApi = withContext(Dispatchers.IO) {
+                        IpokemonsRepository.getPokedex()
+                    }
+                }
+                _pokemonSelected.value = pokemonsFromApi.find { it.id == pokemonId }
+                _pokemonsItem.value = PokemonApiResult.Success(pokemonsFromApi)
+            } catch (e: Exception) {
+                val coinResult = PokemonApiResult.Error<List<Pokemon>>(e)
+                _pokemonsItem.value = coinResult
             }
         }
     }
@@ -35,15 +48,19 @@ class MainViewModel(private val IpokemonsRepository: IPokemonsRepository) : View
                     pokemonsFromApi = withContext(Dispatchers.IO) {
                         IpokemonsRepository.getPokedex()
                     }
-                    // coinsFromApi = setIconUrl(coinsFromApi)
-                    // coinsFromApi = getOnlyCrypto(coinsFromApi)
                 }
                 _pokemonsItem.value = PokemonApiResult.Success(pokemonsFromApi)
             } catch (e: Exception) {
-                val coinResult = PokemonApiResult.Error<List<Pokemon>>(e)
-                Log.d("PokemonResult", "PokemonCoin: $coinResult")
-                _pokemonsItem.value = coinResult
+                val pokemonResult = PokemonApiResult.Error<List<Pokemon>>(e)
+                Log.d("PokemonResult", "PokemonCoin: $pokemonResult")
+                _pokemonsItem.value = pokemonResult
             }
+        }
+    }
+
+    fun setFavorite(isFavorite: Boolean) {
+        viewModelScope.launch {
+            _pokemonSelected.value?.isFavorite = isFavorite
         }
     }
 }

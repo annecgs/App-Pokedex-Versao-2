@@ -8,9 +8,13 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.pokedexapp.R
 import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.data.PokemonApiResult
 import com.example.pokedexapp.databinding.FragmentHomeBinding
+import com.example.pokedexapp.ui.dashboard.InfoFragment
 import com.example.pokedexapp.utils.Helpers
 import com.example.pokedexapp.viewModel.MainViewModel
 
@@ -41,6 +45,7 @@ class HomeFragment : Fragment() {
         binding.rvHome.adapter = adapterHome
 
         getData()
+        goToFirstItemInRecyclerView()
     }
 
     private fun setupSearchView(list: List<Pokemon>) {
@@ -99,7 +104,7 @@ class HomeFragment : Fragment() {
                     setupSearchView(listPokemons.data as List<Pokemon>)
                 }
                 is PokemonApiResult.Error<*> -> {
-                     binding.progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
                     // errorFragment = ErrorFragment()
                     //  replaceFragment(ErrorFragment())
                     // viewModel.mensagem = listCoins.throwable.message.toString()
@@ -108,6 +113,40 @@ class HomeFragment : Fragment() {
                     Log.d("INFO", "Error.message: ${listPokemons.throwable.message}")
                 }
             }
+        }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        adapterHome.onClickListener = { pokemonId ->
+            viewModel.setPokemon(pokemonId)
+            replaceFragment(InfoFragment())
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = activity?.supportFragmentManager
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        fragmentTransaction?.replace(R.id.nav_fragment, fragment)
+        fragmentTransaction?.addToBackStack(null)
+        fragmentTransaction?.commit()
+    }
+
+    private fun goToFirstItemInRecyclerView() {
+        val linearLayoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rvHome.layoutManager = linearLayoutManager
+        binding.rvHome.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (linearLayoutManager.findFirstVisibleItemPosition() == 0) {
+                    binding.fab.visibility = View.GONE
+                } else binding.fab.visibility = View.VISIBLE
+            }
+        })
+        binding.fab.setOnClickListener {
+            binding.rvHome.scrollToPosition(0)
         }
     }
 
