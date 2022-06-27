@@ -31,7 +31,7 @@ favorito)</li>
 
 
 <h2>Fluxo principal - Listagem de pokemons</h2>
-<p float="center">
+<p float="left">
 <img src="https://user-images.githubusercontent.com/103140224/176012602-0a1272ed-78eb-4beb-9dd9-b378b9e5cdfb.png" width="300"/>
 <img src="https://user-images.githubusercontent.com/103140224/175982436-59cfa1db-b738-4635-a910-14a43a6b4c12.png" width="300"/>
 <img src="https://user-images.githubusercontent.com/103140224/175982456-88883704-dcee-453a-9ee7-00f1c6cd5abd.png" width="300"/>
