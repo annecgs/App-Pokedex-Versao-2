@@ -17,6 +17,7 @@
     <string name="candy_pokemon_favorito">Candy do Pokemon Favorito</string>
     <string name="simbolo_favorito">Pokemon classificado como favorito</string>
     <string name="try_again">Algo de errado aconteceu, por favor tente novamente</string>
+    <string name="try_again_click">Click aqui para tentar novamente</string>
     <string name="mensagem_de_erro">Mensagem de erro</string>
 
 </resources>
