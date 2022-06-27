@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/App-Pokedex-Versao-2/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/App-Pokedex-Versao-2/app/src/main/res/layout/title_main.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/PokedexApp/app/src/main/res/drawable-v24/bg_button.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/PokedexApp/app/src/main/res/drawable-v24/bg_item_favorite.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/PokedexApp/app/src/main/res/drawable-v24/ic_baseline_chevron_left_24.xml" value="0.1" />
