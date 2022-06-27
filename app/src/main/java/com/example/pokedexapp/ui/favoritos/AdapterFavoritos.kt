@@ -1,4 +1,4 @@
-package com.example.pokedexapp.ui.notifications
+package com.example.pokedexapp.ui.favoritos
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

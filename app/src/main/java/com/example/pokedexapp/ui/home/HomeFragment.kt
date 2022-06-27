@@ -1,5 +1,6 @@
 package com.example.pokedexapp.ui.home
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.data.PokemonApiResult
 import com.example.pokedexapp.databinding.FragmentHomeBinding
 import com.example.pokedexapp.ui.InfoPokemon.InfoFragment
+import com.example.pokedexapp.ui.error.ErrorFragment
 import com.example.pokedexapp.utils.Helpers
 import com.example.pokedexapp.viewModel.MainViewModel
 
@@ -24,6 +26,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private lateinit var adapterHome: AdapterHome
     private val binding get() = _binding!!
+    private lateinit var errorFragment: ErrorFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -70,14 +73,14 @@ class HomeFragment : Fragment() {
     private fun setlistQueryAdapter(newList: MutableList<Pokemon>) {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
-            // binding.widgetListEmpty.visibility = View.GONE
+            binding.widgetListEmpty.visibility = View.GONE
             binding.rvHome.visibility = View.VISIBLE
             binding.include2.root.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
         } else {
             binding.rvHome.visibility = View.GONE
             binding.include2.root.visibility = View.GONE
-            // binding.widgetListEmpty.visibility = View.VISIBLE
+            binding.widgetListEmpty.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
         }
     }
@@ -94,21 +97,21 @@ class HomeFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                     binding.rvHome.visibility = View.VISIBLE
                     binding.include2.root.visibility = View.VISIBLE
-                    // binding.rvMainCoins.visibility = View.VISIBLE
-                   /* val sharedPref =
+
+                    val sharedPref =
                         activity?.getPreferences(Context.MODE_PRIVATE) ?: return@observe
 
-                    (listCoins.data as List<CoinItem>).forEach { coin ->
-                        if (sharedPref.all.containsKey(coin.asset_id)) coin.isFavorite = true
-                    }*/
+                    (listPokemons.data as List<Pokemon>).forEach { pokemon ->
+                        if (sharedPref.all.containsKey(pokemon.name)) pokemon.isFavorite = true
+                    }
                     setListAdapter(listPokemons.data as List<Pokemon>)
                     setupSearchView(listPokemons.data as List<Pokemon>)
                 }
                 is PokemonApiResult.Error<*> -> {
                     binding.progressBar.visibility = View.GONE
-                    // errorFragment = ErrorFragment()
-                    //  replaceFragment(ErrorFragment())
-                    // viewModel.mensagem = listCoins.throwable.message.toString()
+                    errorFragment = ErrorFragment()
+                    replaceFragment(ErrorFragment())
+                    viewModel.mensagem = listPokemons.throwable.message.toString()
                     Log.d("INFO", "Error.cause: ${listPokemons.throwable.cause}")
                     Log.d("INFO", "Error: $listPokemons")
                     Log.d("INFO", "Error.message: ${listPokemons.throwable.message}")

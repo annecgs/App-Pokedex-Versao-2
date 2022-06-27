@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.pokedexapp.databinding.ActivityMainBinding
 import com.example.pokedexapp.ui.home.HomeFragment
-import com.example.pokedexapp.ui.notifications.NotificationsFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.pokedexapp.ui.favoritos.FavoritosFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_notifications -> {
-                    replaceFragment(NotificationsFragment())
+                    replaceFragment(FavoritosFragment())
                     true
                 }
                 else -> false

@@ -55,7 +55,6 @@ class InfoFragment : Fragment() {
             }
 
             Log.d("CoinRecive", "onActivityCreated: $pokemon")
-            //binding.tvCandy.text = pokemon.candy
             binding.tvPokemonNome.text = pokemon.name
             binding.tvAltura.text = pokemon.height
             binding.tvPeso.text = pokemon.weight

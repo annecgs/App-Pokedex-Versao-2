@@ -19,10 +19,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="174dp"
+        android:layout_height="109dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="2dp"
         android:orientation="vertical"
         android:screenReaderFocusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,6 +73,22 @@
             tools:ignore="MissingConstraints" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_favoriteItem"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="22dp"
+        android:contentDescription="@string/simbolo_favorito"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@drawable/pokemon_favorito"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

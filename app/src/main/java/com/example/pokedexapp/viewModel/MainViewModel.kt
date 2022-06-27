@@ -22,6 +22,9 @@ class MainViewModel(private val IpokemonsRepository: IPokemonsRepository) : View
 
     var pokemonsFromApi: List<Pokemon> = ArrayList()
 
+    // tratamento de erros
+    var mensagem = ""
+
     fun setPokemon(pokemonId: Int) {
         viewModelScope.launch {
             _pokemonsItem.value = PokemonApiResult.Loading()

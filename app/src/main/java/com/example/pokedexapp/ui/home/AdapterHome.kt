@@ -1,6 +1,7 @@
 package com.example.pokedexapp.ui.home
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -33,8 +34,17 @@ class AdapterHome : ListAdapter<Pokemon, AdapterHome.ViewHolder>(DIFF_CALLBACK) 
                 .load(x.img)
                 .into(binding.imagePokemon)
 
+            getFavorite(x)
+
             binding.root.setOnClickListener {
                 onClickListener?.invoke(x.id)
+            }
+        }
+
+        private fun getFavorite(x: Pokemon) {
+            when (x.isFavorite) {
+                true -> binding.ivFavoriteItem.visibility = View.VISIBLE
+                false -> binding.ivFavoriteItem.visibility = View.GONE
             }
         }
     }

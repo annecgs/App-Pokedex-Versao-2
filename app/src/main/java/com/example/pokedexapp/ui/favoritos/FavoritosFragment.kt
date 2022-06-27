@@ -1,4 +1,4 @@
-package com.example.pokedexapp.ui.notifications
+package com.example.pokedexapp.ui.favoritos
 
 import android.content.Context
 import android.os.Bundle
@@ -6,26 +6,26 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokedexapp.R
 import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.data.PokemonApiResult
-import com.example.pokedexapp.databinding.FragmentNotificationsBinding
+import com.example.pokedexapp.databinding.FragmentFavoritosBinding
 import com.example.pokedexapp.ui.InfoPokemon.InfoFragment
+import com.example.pokedexapp.ui.error.ErrorFragment
 import com.example.pokedexapp.utils.Helpers
 import com.example.pokedexapp.viewModel.MainViewModel
 
-class NotificationsFragment : Fragment() {
+class FavoritosFragment : Fragment() {
 
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
     private lateinit var adapter: AdapterFavoritos
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentFavoritosBinding? = null
     private val binding get() = _binding!!
+    private lateinit var errorFragment: ErrorFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +33,7 @@ class NotificationsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentFavoritosBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         binding.include.tvMainDate.text = Helpers.getCalendarDate()
@@ -63,9 +63,6 @@ class NotificationsFragment : Fragment() {
         }
     }
 
-
-
-
     private fun getFavorites(list: PokemonApiResult<List<Pokemon>>) {
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         Log.d("ListFavorites", "getFavorites: ${sharedPref.all}")
@@ -81,8 +78,8 @@ class NotificationsFragment : Fragment() {
             }
 
             is PokemonApiResult.Error -> {
-                //errorFragment = ErrorFragment()
-                //replaceFragment(ErrorFragment())
+                errorFragment = ErrorFragment()
+                replaceFragment(ErrorFragment())
             }
         }
 
@@ -93,9 +90,6 @@ class NotificationsFragment : Fragment() {
 
         adapter.submitList(tempList)
     }
-
-
-
 
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = activity?.supportFragmentManager
