@@ -14,9 +14,9 @@
 <li>Boas práticas com aplicação do Ktlint</li>
 <li>Acessibilidade, utilizar https://developer.android.com/guide/topics/ui/accessibility/principles para
 referência ou https://guia-wcag.com/ (em desenvolvimento) ;
-<li>Suporte versão do Android 12;</li>
+<li>Suporte versão do Android 12 (a fazer);</li>
 <li>Modularização (a fazer);</li>
-<li>Testes unitários em JUnit (a fazer);<li>
+<li>Testes unitários em JUnit (a fazer);</li>
 
 <h2>As características funcionais e não funcionais do app consistem em:</h2>
 <li>Lista de pokemons com scrolling infinito;</li>
@@ -26,7 +26,7 @@ referência ou https://guia-wcag.com/ (em desenvolvimento) ;
 <li>Aplicar o conceito de modularização no aplicativo, importando/incluindo um projeto externo como uma library no Gradle.(a fazer!)</li>
 <li> Deve existir uma tela padrão para erro com a opção de “tentar novamente”;</li>
 <li>Para favoritos deverá ser utilizado algum meio de persistência local como por exemplo, Shared
-preferences (não salvando toda resposta da api, apenas chave valor para marcar uma moeda como
+preferences (não salvando toda resposta da api, apenas chave valor para marcar um pokemon como
 favorito)</li>
 
 
