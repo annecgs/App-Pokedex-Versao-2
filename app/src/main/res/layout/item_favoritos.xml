@@ -55,6 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_nameFavorite" />
 
        <ImageView
+           android:id="@+id/imagePokemon"
            android:layout_width="100dp"
            android:layout_height="100dp"
            tools:ignore="MissingConstraints"
