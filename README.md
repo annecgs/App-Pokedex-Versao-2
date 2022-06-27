@@ -36,3 +36,9 @@ favorito)</li>
 <img src="https://user-images.githubusercontent.com/103140224/175982456-88883704-dcee-453a-9ee7-00f1c6cd5abd.png" width="300"/>
 <img src="https://user-images.githubusercontent.com/103140224/175982471-7aac06a7-2ff1-4b01-8cb6-b7a4b4b6d939.png" width="300"/>
 </p>
+
+
+<h2>Aplicação da acessibilidade</h2>
+<li>Adição de etiquetas com contentDescription</li>
+<li>Elementos editáveis aplicação android:hint e android:labelFor</li>
+<li>Grupos de conteúdo relacionado aplicação do android:screenReaderFocusable do objeto de contêiner como true e o atributo android:focusable de cada objeto interno como false.</li>
