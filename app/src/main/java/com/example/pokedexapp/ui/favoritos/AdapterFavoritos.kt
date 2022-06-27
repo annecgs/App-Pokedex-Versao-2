@@ -9,15 +9,15 @@ import com.bumptech.glide.Glide
 import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.databinding.ItemFavoritosBinding
 
-class AdapterFavoritos: ListAdapter<Pokemon, AdapterFavoritos.ViewHolder>(DIFF_CALLBACK){
+class AdapterFavoritos : ListAdapter<Pokemon, AdapterFavoritos.ViewHolder>(DIFF_CALLBACK) {
     var onClickListener: ((pokemonId: Int) -> Unit)? = null
-    class ViewHolder (
+    class ViewHolder(
         private val binding: ItemFavoritosBinding,
         private val onClickListener: ((pokemonId: Int) -> Unit)? = null
 
-    ):RecyclerView.ViewHolder(binding.root){
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(x:Pokemon){
+        fun bind(x: Pokemon) {
             binding.tvNameFavorite.text = x.name
             binding.tvCandyPokemon.text = x.candy
             Glide.with(binding.root.context)
@@ -28,7 +28,6 @@ class AdapterFavoritos: ListAdapter<Pokemon, AdapterFavoritos.ViewHolder>(DIFF_C
                 onClickListener?.invoke(x.id)
             }
         }
-
     }
 
     companion object {
@@ -44,12 +43,11 @@ class AdapterFavoritos: ListAdapter<Pokemon, AdapterFavoritos.ViewHolder>(DIFF_C
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemFavoritosBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return ViewHolder(binding,onClickListener)
+        val binding = ItemFavoritosBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding, onClickListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
-
 }
