@@ -1,4 +1,4 @@
-package com.example.pokedexapp.ui.dashboard
+package com.example.pokedexapp.ui.InfoPokemon
 
 import android.content.Context
 import android.os.Bundle

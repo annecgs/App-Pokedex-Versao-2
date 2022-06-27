@@ -13,6 +13,9 @@
     <string name="peso">Peso</string>
     <string name="altura">Altura</string>
     <string name="ovo">Ovo</string>
+    <string name="nome_pokemon_favorito">Nome do Pokemon Favorito</string>
+    <string name="candy_pokemon_favorito">Candy do Pokemon Favorito</string>
+    <string name="simbolo_favorito">Pokemon classificado como favorito</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

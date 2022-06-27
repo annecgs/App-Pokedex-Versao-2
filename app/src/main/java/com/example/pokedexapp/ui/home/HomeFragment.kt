@@ -14,7 +14,7 @@ import com.example.pokedexapp.R
 import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.data.PokemonApiResult
 import com.example.pokedexapp.databinding.FragmentHomeBinding
-import com.example.pokedexapp.ui.dashboard.InfoFragment
+import com.example.pokedexapp.ui.InfoPokemon.InfoFragment
 import com.example.pokedexapp.utils.Helpers
 import com.example.pokedexapp.viewModel.MainViewModel
 
