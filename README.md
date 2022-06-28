@@ -1,4 +1,5 @@
-# App Pokedex Versao 2
+# App Pokedex Versao 2  
+![Badge](https://visitor-counter-badge.vercel.app/api/annecgs/App-Pokedex-Versao-2/visitor-counter-badge/?label=Visitor&color=363636&labelColor=8B008B)
 <p>Projeto pessoal desenvolvido para fins de estudo de mobile com aplicação da linguagem kotlin</p>
 
 <h2>Informações do projeto</h2>
