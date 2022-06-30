@@ -11,7 +11,7 @@ import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.example.frontend.databinding.FragmentInfoBinding
 import com.example.frontend.utils.Helpers
-import com.example.frontend.viewModel.MainViewModel
+import com.example.frontend.ui.viewModel.MainViewModel
 
 
 class InfoFragment : Fragment() {

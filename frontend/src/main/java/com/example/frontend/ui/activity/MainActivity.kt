@@ -1,4 +1,4 @@
-package com.example.frontend
+package com.example.frontend.ui.activity
 
 import android.graphics.Color
 import android.os.Build
@@ -7,10 +7,10 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.frontend.R
 import com.example.frontend.databinding.ActivityMainBinding
 import com.example.frontend.ui.favoritos.FavoritosFragment
 import com.example.frontend.ui.home.HomeFragment
-
 
 class MainActivity : AppCompatActivity() {
 

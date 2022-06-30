@@ -12,7 +12,7 @@ import com.example.frontend.R
 import com.example.frontend.databinding.FragmentErrorBinding
 import com.example.frontend.ui.home.HomeFragment
 import com.example.frontend.utils.Helpers
-import com.example.frontend.viewModel.MainViewModel
+import com.example.frontend.ui.viewModel.MainViewModel
 
 class ErrorFragment : Fragment() {
 

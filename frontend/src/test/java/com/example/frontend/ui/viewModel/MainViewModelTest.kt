@@ -1,10 +1,8 @@
 package com.example.pokedexapp.viewModel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.pokedexapp.data.PokemonApiResult
+import com.example.backend.data.dto.PokemonApiResult
 import com.example.pokedexapp.test_utils.MainCoroutineRule
-import com.example.pokedexapp.test_utils.getOrAwaitValue
-import io.mockk.InternalPlatformDsl.toArray
 import junit.framework.TestCase
 import org.junit.Assert
 import org.junit.Before

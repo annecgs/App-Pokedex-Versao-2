@@ -1,7 +1,7 @@
 package com.example.frontend.utils
 
-import com.example.frontend.viewModel.MainViewModelFactory
-import com.example.pokedexapp.data.Pokemon
+import com.example.frontend.ui.viewModel.MainViewModelFactory
+import com.example.backend.data.dto.Pokemon
 import com.example.pokedexapp.network.IPokemonsClient
 import com.example.pokedexapp.network.RetrofitInstance
 import com.example.pokedexapp.repository.PokemonsRepository

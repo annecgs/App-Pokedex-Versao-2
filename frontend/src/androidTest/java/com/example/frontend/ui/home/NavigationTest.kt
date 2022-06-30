@@ -5,9 +5,9 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.pokedexapp.MainActivity
-import com.example.pokedexapp.R
+import androidx.test.runner.AndroidJUnit4
+import com.example.frontend.ui.activity.MainActivity
+import com.example.frontend.R
 import org.junit.Test
 import org.junit.runner.RunWith
 

@@ -1,6 +1,6 @@
 package com.example.pokedexapp.utils
 
-import com.example.pokedexapp.data.Pokemon
+import com.example.backend.data.dto.Pokemon
 import com.example.pokedexapp.viewModel.mockPokemon
 import org.junit.Assert
 import org.junit.Test

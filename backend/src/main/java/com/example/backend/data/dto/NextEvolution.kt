@@ -1,4 +1,4 @@
-package com.example.pokedexapp.data
+package com.example.backend.data.dto
 
 data class NextEvolution(
     val name: String,

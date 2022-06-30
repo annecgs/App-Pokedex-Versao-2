@@ -1,12 +1,12 @@
-package com.example.frontend.viewModel
+package com.example.frontend.ui.viewModel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pokedexapp.data.Pokemon
-import com.example.pokedexapp.data.PokemonApiResult
+import com.example.backend.data.dto.Pokemon
+import com.example.backend.data.dto.PokemonApiResult
 import com.example.pokedexapp.repository.IPokemonsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

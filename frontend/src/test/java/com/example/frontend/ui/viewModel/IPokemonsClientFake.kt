@@ -1,6 +1,6 @@
 package com.example.pokedexapp.viewModel
 
-import com.example.pokedexapp.data.Pokemon
+import com.example.backend.data.dto.Pokemon
 import com.example.pokedexapp.repository.IPokemonsRepository
 
 class IPokemonsClientFake(val string: String) : IPokemonsRepository {

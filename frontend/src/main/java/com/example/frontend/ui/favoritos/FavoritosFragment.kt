@@ -15,9 +15,9 @@ import com.example.frontend.databinding.FragmentFavoritosBinding
 import com.example.frontend.ui.InfoPokemon.InfoFragment
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.utils.Helpers
-import com.example.frontend.viewModel.MainViewModel
-import com.example.pokedexapp.data.Pokemon
-import com.example.pokedexapp.data.PokemonApiResult
+import com.example.frontend.ui.viewModel.MainViewModel
+import com.example.backend.data.dto.Pokemon
+import com.example.backend.data.dto.PokemonApiResult
 
 class FavoritosFragment : Fragment() {
 

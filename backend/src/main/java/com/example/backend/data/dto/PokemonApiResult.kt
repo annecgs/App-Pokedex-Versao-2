@@ -1,4 +1,4 @@
-package com.example.pokedexapp.data
+package com.example.backend.data.dto
 
 sealed class PokemonApiResult <T> {
     class Loading<T> : PokemonApiResult<T>()

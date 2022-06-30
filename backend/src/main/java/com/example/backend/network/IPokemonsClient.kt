@@ -1,6 +1,6 @@
 package com.example.pokedexapp.network
 
-import com.example.pokedexapp.data.Pokedex
+import com.example.backend.data.dto.Pokedex
 import retrofit2.Response
 import retrofit2.http.GET
 

@@ -1,6 +1,6 @@
 package com.example.pokedexapp.repository
 
-import com.example.pokedexapp.data.Pokemon
+import com.example.backend.data.dto.Pokemon
 import com.example.pokedexapp.network.IPokemonsClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

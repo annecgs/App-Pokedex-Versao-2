@@ -1,11 +1,9 @@
-package com.example.frontend.ui
+package com.example.frontend.ui.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.frontend.MainActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.frontend.R
-
 
 class SplashActivity : AppCompatActivity() {
     private val splashActivity: Long = 3000
