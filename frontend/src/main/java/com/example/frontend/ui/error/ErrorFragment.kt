@@ -1,18 +1,18 @@
-package com.example.pokedexapp.ui.error
+package com.example.frontend.ui.error
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
-import com.example.pokedexapp.R
-import com.example.pokedexapp.databinding.FragmentErrorBinding
-import com.example.pokedexapp.ui.home.HomeFragment
-import com.example.pokedexapp.utils.Helpers
-import com.example.pokedexapp.viewModel.MainViewModel
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentErrorBinding
+import com.example.frontend.ui.home.HomeFragment
+import com.example.frontend.utils.Helpers
+import com.example.frontend.viewModel.MainViewModel
 
 class ErrorFragment : Fragment() {
 
@@ -33,7 +33,6 @@ class ErrorFragment : Fragment() {
 
         val view = binding.root
         return view
-
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -113,7 +112,6 @@ class ErrorFragment : Fragment() {
                 .into(binding.imageView2)
         }
     }
-
 }
 
 private fun Button.setOnClickListener(replaceFragment: Unit) {

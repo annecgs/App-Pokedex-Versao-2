@@ -1,4 +1,4 @@
-package com.example.pokedexapp.ui.home
+package com.example.frontend.ui.home
 
 import android.content.Context
 import android.os.Bundle
@@ -11,14 +11,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokedexapp.R
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentHomeBinding
+import com.example.frontend.ui.InfoPokemon.InfoFragment
+import com.example.frontend.ui.error.ErrorFragment
+import com.example.frontend.utils.Helpers
+import com.example.frontend.viewModel.MainViewModel
 import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.data.PokemonApiResult
-import com.example.pokedexapp.databinding.FragmentHomeBinding
-import com.example.pokedexapp.ui.InfoPokemon.InfoFragment
-import com.example.pokedexapp.ui.error.ErrorFragment
-import com.example.pokedexapp.utils.Helpers
-import com.example.pokedexapp.viewModel.MainViewModel
 
 class HomeFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels() { Helpers.getMainViewModelFactory() }

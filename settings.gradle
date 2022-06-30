@@ -1,4 +1,4 @@
-pluginManagement {
+/*pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
@@ -11,6 +11,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
-}
+}*/
 rootProject.name = "Pokedex App"
-include ':app'
+//include ':app'
+include ':backend'
+include ':frontend'

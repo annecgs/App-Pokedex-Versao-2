@@ -1,4 +1,4 @@
-package com.example.pokedexapp.utils
+package com.example.frontend.utils
 
 class Constants {
     companion object {

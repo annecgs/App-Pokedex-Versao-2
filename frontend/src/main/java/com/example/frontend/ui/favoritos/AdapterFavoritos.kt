@@ -1,4 +1,4 @@
-package com.example.pokedexapp.ui.favoritos
+package com.example.frontend.ui.favoritos
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.frontend.databinding.ItemFavoritosBinding
 import com.example.pokedexapp.data.Pokemon
-import com.example.pokedexapp.databinding.ItemFavoritosBinding
 
 class AdapterFavoritos : ListAdapter<Pokemon, AdapterFavoritos.ViewHolder>(DIFF_CALLBACK) {
     var onClickListener: ((pokemonId: Int) -> Unit)? = null

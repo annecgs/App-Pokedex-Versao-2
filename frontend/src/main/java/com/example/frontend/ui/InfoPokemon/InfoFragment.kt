@@ -1,4 +1,4 @@
-package com.example.pokedexapp.ui.InfoPokemon
+package com.example.frontend.ui.InfoPokemon
 
 import android.content.Context
 import android.os.Bundle
@@ -9,9 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
-import com.example.pokedexapp.databinding.FragmentInfoBinding
-import com.example.pokedexapp.utils.Helpers
-import com.example.pokedexapp.viewModel.MainViewModel
+import com.example.frontend.databinding.FragmentInfoBinding
+import com.example.frontend.utils.Helpers
+import com.example.frontend.viewModel.MainViewModel
+
 
 class InfoFragment : Fragment() {
 

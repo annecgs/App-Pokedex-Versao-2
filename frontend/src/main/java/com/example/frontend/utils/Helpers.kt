@@ -1,10 +1,10 @@
-package com.example.pokedexapp.utils
+package com.example.frontend.utils
 
+import com.example.frontend.viewModel.MainViewModelFactory
 import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.network.IPokemonsClient
 import com.example.pokedexapp.network.RetrofitInstance
 import com.example.pokedexapp.repository.PokemonsRepository
-import com.example.pokedexapp.viewModel.MainViewModelFactory
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

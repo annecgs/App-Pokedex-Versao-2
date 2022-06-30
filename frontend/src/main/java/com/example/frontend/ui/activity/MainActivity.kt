@@ -1,4 +1,4 @@
-package com.example.pokedexapp
+package com.example.frontend
 
 import android.graphics.Color
 import android.os.Build
@@ -7,9 +7,10 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.pokedexapp.databinding.ActivityMainBinding
-import com.example.pokedexapp.ui.favoritos.FavoritosFragment
-import com.example.pokedexapp.ui.home.HomeFragment
+import com.example.frontend.databinding.ActivityMainBinding
+import com.example.frontend.ui.favoritos.FavoritosFragment
+import com.example.frontend.ui.home.HomeFragment
+
 
 class MainActivity : AppCompatActivity() {
 

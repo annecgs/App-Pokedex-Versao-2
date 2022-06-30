@@ -1,4 +1,4 @@
-package com.example.pokedexapp.ui.favoritos
+package com.example.frontend.ui.favoritos
 
 import android.content.Context
 import android.os.Bundle
@@ -10,14 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokedexapp.R
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentFavoritosBinding
+import com.example.frontend.ui.InfoPokemon.InfoFragment
+import com.example.frontend.ui.error.ErrorFragment
+import com.example.frontend.utils.Helpers
+import com.example.frontend.viewModel.MainViewModel
 import com.example.pokedexapp.data.Pokemon
 import com.example.pokedexapp.data.PokemonApiResult
-import com.example.pokedexapp.databinding.FragmentFavoritosBinding
-import com.example.pokedexapp.ui.InfoPokemon.InfoFragment
-import com.example.pokedexapp.ui.error.ErrorFragment
-import com.example.pokedexapp.utils.Helpers
-import com.example.pokedexapp.viewModel.MainViewModel
 
 class FavoritosFragment : Fragment() {
 

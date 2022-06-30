@@ -1,4 +1,4 @@
-package com.example.pokedexapp.ui.home
+package com.example.frontend.ui.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.frontend.databinding.PokemonItemBinding
 import com.example.pokedexapp.data.Pokemon
-import com.example.pokedexapp.databinding.PokemonItemBinding
 
 class AdapterHome : ListAdapter<Pokemon, AdapterHome.ViewHolder>(DIFF_CALLBACK) {
     var onClickListener: ((pokemonId: Int) -> Unit)? = null
