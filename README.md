@@ -24,7 +24,7 @@ referência ou https://guia-wcag.com/ ;
 <li>Adicionar um pokemon aos favoritos;</li>
 <li>Controle de estado (se um pokemon foi adicionado aos favoritos ou não);</li>
 <li>Indicar como pokemon favorito logo na tela de listagem dos pokemons;</li>
-<li>Aplicar o conceito de modularização no aplicativo, importando/incluindo um projeto externo como uma library no Gradle.(a fazer!)</li>
+<li>Aplicar o conceito de modularização no aplicativo, importando/incluindo um projeto externo como uma library no Gradle.</li>
 <li> Deve existir uma tela padrão para erro com a opção de “tentar novamente”;</li>
 <li>Para favoritos deverá ser utilizado algum meio de persistência local como por exemplo, Shared
 preferences (não salvando toda resposta da api, apenas chave valor para marcar um pokemon como
