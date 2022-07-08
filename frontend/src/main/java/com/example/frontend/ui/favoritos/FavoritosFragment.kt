@@ -10,14 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.backend.data.dto.Pokemon
+import com.example.backend.data.dto.PokemonApiResult
 import com.example.frontend.R
 import com.example.frontend.databinding.FragmentFavoritosBinding
 import com.example.frontend.ui.InfoPokemon.InfoFragment
 import com.example.frontend.ui.error.ErrorFragment
-import com.example.frontend.utils.Helpers
 import com.example.frontend.ui.viewModel.MainViewModel
-import com.example.backend.data.dto.Pokemon
-import com.example.backend.data.dto.PokemonApiResult
+import com.example.frontend.utils.Helpers
 
 class FavoritosFragment : Fragment() {
 

@@ -65,13 +65,13 @@ class ErrorFragment : Fragment() {
         } else if (mensagem.contains("404")) {
             binding.mensagem.text = "URL não localizada"
             Glide.with(requireContext())
-                .load(R.drawable.img_error_transparent)
+                .load(R.drawable.error_404)
                 .centerCrop()
                 .into(binding.imageView2)
         } else if (mensagem.contains("410")) {
             binding.mensagem.text = "URL excluída permanentemente"
             Glide.with(requireContext())
-                .load(R.drawable.erro_410)
+                .load(R.drawable.error_410_6)
                 .centerCrop()
                 .into(binding.imageView2)
         } else if (mensagem.contains("429")) {
@@ -83,19 +83,19 @@ class ErrorFragment : Fragment() {
         } else if (mensagem.contains("500")) {
             binding.mensagem.text = "O servidor não pode atender sua solicitação neste momento"
             Glide.with(requireContext())
-                .load(R.drawable.error_500)
+                .load(R.drawable.error_500_2)
                 .centerCrop()
                 .into(binding.imageView2)
         } else if (mensagem.contains("502")) {
             binding.mensagem.text = "Falha de comunicação entre os servidores"
             Glide.with(requireContext())
-                .load(R.drawable.error_502)
+                .load(R.drawable.error_502_2)
                 .centerCrop()
                 .into(binding.imageView2)
         } else if (mensagem.contains("503")) {
             binding.mensagem.text = "Serviço temporariamente indisponível"
             Glide.with(requireContext())
-                .load(R.drawable.error_503)
+                .load(R.drawable.error_503_2)
                 .centerCrop()
                 .into(binding.imageView2)
         } else if (mensagem.contains("504")) {
@@ -107,7 +107,7 @@ class ErrorFragment : Fragment() {
         } else if (mensagem.contains("505")) {
             binding.mensagem.text = "Versão HTTP não suportada"
             Glide.with(requireContext())
-                .load(R.drawable.error_505)
+                .load(R.drawable.error_505_5)
                 .centerCrop()
                 .into(binding.imageView2)
         }
