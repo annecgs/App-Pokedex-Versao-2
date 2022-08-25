@@ -37,8 +37,8 @@ class MainViewModel(private val IpokemonsRepository: IPokemonsRepository) : View
                 _pokemonSelected.value = pokemonsFromApi.find { it.id == pokemonId }
                 _pokemonsItem.value = PokemonApiResult.Success(pokemonsFromApi)
             } catch (e: Exception) {
-                val coinResult = PokemonApiResult.Error<List<Pokemon>>(e)
-                _pokemonsItem.value = coinResult
+                val pokemonResult = PokemonApiResult.Error<List<Pokemon>>(e)
+                _pokemonsItem.value = pokemonResult
             }
         }
     }

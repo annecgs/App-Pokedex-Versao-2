@@ -8,14 +8,13 @@
     tools:context=".ui.error.ErrorFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imagemError"
         android:layout_width="350dp"
         android:layout_height="309dp"
-        android:contentDescription="@string/try_again"
-        android:src="@drawable/img_error_transparent"/>
+        android:contentDescription="@string/try_again" />
 
     <TextView
-        android:id="@+id/mensagem"
+        android:id="@+id/mensagemError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/mensagem_de_erro"

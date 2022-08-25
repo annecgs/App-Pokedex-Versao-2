@@ -19,6 +19,7 @@ import com.example.frontend.utils.Helpers
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.backend.data.dto.Pokemon
 import com.example.backend.data.dto.PokemonApiResult
+import kotlinx.android.synthetic.main.title_main.view.*
 
 class HomeFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels() { Helpers.getMainViewModelFactory() }
@@ -36,6 +37,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         binding.includeDate.tvMainDate.text = Helpers.getCalendarDate()
+        //binding.includeDate.tv_mainDate.text = Helpers.getCalendarDate()
         setupUi()
         return root
     }
@@ -70,19 +72,19 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun setlistQueryAdapter(newList: MutableList<Pokemon>) {
-        if (newList.isNotEmpty()) {
-            setListAdapter(newList)
-            binding.widgetListEmpty.visibility = View.GONE
-            binding.rvHome.visibility = View.VISIBLE
-            binding.include2.root.visibility = View.VISIBLE
-            binding.progressBar.visibility = View.GONE
-        } else {
-            binding.rvHome.visibility = View.GONE
-            binding.include2.root.visibility = View.GONE
-            binding.widgetListEmpty.visibility = View.VISIBLE
-            binding.progressBar.visibility = View.GONE
-        }
+    private fun setlistQueryAdapter(newList: MutableList<Pokemon>) = if (newList.isNotEmpty()) {
+        setListAdapter(newList)
+        binding.widgetListEmpty.visibility = View.GONE
+        binding.rvHome.visibility = View.VISIBLE
+        //binding.include2.root.visibility = View.VISIBLE
+        binding.include2.root.visibility = View.VISIBLE
+        binding.progressBar.visibility = View.GONE
+    } else {
+        binding.rvHome.visibility = View.GONE
+        binding.include2.root.visibility = View.GONE
+        //binding.include2.root.visibility = View.VISIBLE
+        binding.widgetListEmpty.visibility = View.VISIBLE
+        binding.progressBar.visibility = View.GONE
     }
 
     private fun getData() {
@@ -96,6 +98,7 @@ class HomeFragment : Fragment() {
                     Log.d("INFO", "Success: ${listPokemons.data}")
                     binding.progressBar.visibility = View.GONE
                     binding.rvHome.visibility = View.VISIBLE
+                    //binding.include2.root.visibility = View.VISIBLE
                     binding.include2.root.visibility = View.VISIBLE
 
                     val sharedPref =
@@ -111,6 +114,7 @@ class HomeFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                     errorFragment = ErrorFragment()
                     replaceFragment(ErrorFragment())
+                    //viewModel.mensagem = listPokemons.throwable.message.toString()
                     viewModel.mensagem = listPokemons.throwable.message.toString()
                     Log.d("INFO", "Error.cause: ${listPokemons.throwable.cause}")
                     Log.d("INFO", "Error: $listPokemons")

@@ -44,10 +44,12 @@
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/PokedexApp/app/src/main/res/layout/pokemon_item.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/PokedexApp/app/src/main/res/layout/title_main.xml" value="0.1796875" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/PokedexApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/aninh/AndroidStudioProjects/App-Pokedex-Versao-2/frontend/src/main/res/layout/fragment_error.xml" value="0.1" />
+        <entry key="..\:/Users/aninh/AndroidStudioProjects/App-Pokedex-Versao-2/frontend/src/main/res/layout/fragment_favoritos.xml" value="0.14719202898550723" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
