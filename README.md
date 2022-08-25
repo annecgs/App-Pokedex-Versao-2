@@ -43,9 +43,3 @@ favorito)</li>
 <li>Adição de etiquetas com contentDescription</li>
 <li>Elementos editáveis aplicação android:hint e android:labelFor</li>
 <li>Grupos de conteúdo relacionado aplicação do android:screenReaderFocusable do objeto de contêiner como true e o atributo android:focusable de cada objeto interno como false.</li>
-
-
-<h2>Aplicação de testes ViewModel</h2>
-<li>kotlinx-coroutines-test</li>
-<li>mockk</li>
-<li>core:core-testing</li>
