@@ -1,5 +1,6 @@
 # App Pokedex Versao 2  
 ![Badge](https://visitor-counter-badge.vercel.app/api/annecgs/App-Pokedex-Versao-2/visitor-counter-badge/?label=Visitor&color=363636&labelColor=8B008B)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 <p>Projeto pessoal desenvolvido para fins de estudo de mobile com aplicação da linguagem kotlin</p>
 
 <h2>Informações do projeto</h2>
