@@ -17,6 +17,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name pokemon"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"
+        android:textColor="#3E3E3E"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idIVImage" />
+
+    <TextView
+        android:id="@+id/subtitle_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="subName pokemon"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        android:textColor="#3E3E3E"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_name" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/position_one"
         android:layout_width="match_parent"
@@ -25,7 +51,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idIVImage">
+        app:layout_constraintTop_toBottomOf="@+id/subtitle_name">
 
         <ImageView
             android:id="@+id/img_01"
@@ -34,7 +60,7 @@
             android:src="@drawable/baseline_select_position"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -71,7 +97,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idIVImage">
+        app:layout_constraintTop_toBottomOf="@+id/subtitle_name">
 
         <ImageView
             android:id="@+id/img_04"
@@ -80,7 +106,7 @@
             android:src="@drawable/baseline_not_select_position"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -118,7 +144,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idIVImage">
+        app:layout_constraintTop_toBottomOf="@+id/subtitle_name">
 
         <ImageView
             android:id="@+id/img_07"
@@ -126,7 +152,7 @@
             android:layout_height="10dp"
             android:src="@drawable/baseline_not_select_position"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

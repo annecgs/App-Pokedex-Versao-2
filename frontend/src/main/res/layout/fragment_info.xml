@@ -5,188 +5,495 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenReaderFocusable="true"
+    android:background="@color/black"
     android:id="@+id/InfoFragment"
-    tools:context=".ui.InfoPokemon.InfoFragment"
-    android:layout_marginTop="85dp">
+    tools:context=".ui.InfoPokemon.InfoFragment">
 
-    <TextView
-        android:id="@+id/btn_return"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elegantTextHeight="true"
-        android:padding="16dp"
-        android:text="@string/go_back"
-        android:hint="Voltar"
-        android:textColor="@color/white"
-        android:textAlignment="center"
-        android:textSize="17sp"
-        android:drawableTint="@color/white"
-        app:drawableLeftCompat="@drawable/ic_baseline_chevron_left_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="158dp"
-        android:layout_height="138dp"
-        android:contentDescription="@string/name_pokemon"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_pokemonNome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/tv_pokemonNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:elegantTextHeight="true"
-        android:hint="@string/name_pokemon"
-        android:padding="16dp"
-        android:text="Arbok"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btn_addFavorite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_details"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#191919"
-        android:gravity="top|center_horizontal"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/black"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_addFavorite"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_chevron_left_24"
+        app:title="Details Pokemon"
+        app:titleTextColor="@color/white" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Informações"
-            android:hint="Informações"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_details"
+        android:layout_marginTop="60dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:background="#FFFFFF"
+            android:layout_height="wrap_content">
 
-            <TextView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_header"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:elevation="0dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/backgroundPokemon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                android:src="@drawable/pikachu_nawpic"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_type_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/peso"
-                android:text="Peso: "
-                android:textColor="@color/white"
-                android:textSize="22sp" />
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
             <TextView
-                android:id="@+id/tv_peso"
+                android:id="@+id/text_title_evolution"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:gravity="end"
-                android:hint="@string/peso_pokemon"
-                android:maxLines="1"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
-        </LinearLayout>
+                android:layout_marginTop="30dp"
+                android:text="Evolução"
+                android:textColor="#6A6969"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/list_type_info" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:orientation="horizontal">
+            <View
+                android:id="@+id/view_evotulion"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C3C1C1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_evolution" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_evolution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:scrollbars="horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_evotulion" />
 
             <TextView
+                android:id="@+id/text_empty_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/altura"
-                android:text="Altura: "
-                android:textColor="@color/white"
-                android:textSize="22sp" />
+                android:layout_marginTop="10dp"
+                android:text="Não possui evolução!\nEssa é a primeira a sua primeira versão"
+                android:textAlignment="center"
+                android:textColor="#6A6969"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/text_title_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view_evotulion" />
 
             <TextView
-                android:id="@+id/tv_altura"
+                android:id="@+id/text_title_weakness"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:gravity="end"
-                android:hint="@string/altura_pokemom"
-                android:maxLines="1"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
-        </LinearLayout>
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Fraquezas"
+                android:textColor="#6A6969"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/list_evolution" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            <View
+                android:id="@+id/view_weakness"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C3C1C1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_weakness" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_weakness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:scrollbars="horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_weakness" />
 
             <TextView
+                android:id="@+id/text_empty_weakness"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/ovo"
-                android:text="Ovo: "
-                android:textColor="@color/white"
-                android:textSize="22sp" />
+                android:layout_marginTop="10dp"
+                android:text="Não possui fraquezas!"
+                android:textAlignment="center"
+                android:textColor="#6A6969"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/text_title_weakness"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view_weakness" />
 
             <TextView
-                android:id="@+id/tv_ovo"
+                android:id="@+id/text_title_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:gravity="end"
-                android:maxLines="1"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
-        </LinearLayout>
+                android:layout_marginTop="30dp"
+                android:text="Informações"
+                android:textColor="#6A6969"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/list_weakness" />
 
-    </LinearLayout>
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C3C1C1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_info" />
 
-    <ImageView
-        android:id="@+id/iv_favorite"
-        android:layout_width="41dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="52dp"
-        android:contentDescription="Marcado como favorito"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:srcCompat="@drawable/pokemon_favorito"
-        tools:layout_editor_absoluteY="27dp"
-        tools:visibility="visible"
-        tools:ignore="MissingConstraints" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_height"
+                android:layout_width="140dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_details"
+                app:layout_constraintEnd_toStartOf="@id/card_weight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintVertical_bias="0.183">
 
-    <Button
-        android:id="@+id/btn_addFavorite"
-        android:layout_width="144dp"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginHorizontal="32dp"
-        android:background="@drawable/bg_button"
-        android:hint="@string/add"
-        android:padding="5dp"
-        android:text="ADICIONAR"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_pokemonNome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+                <ImageView
+                    android:id="@+id/icon_height"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_height"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/value_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="160m"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_height" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_weight"
+                android:layout_width="140dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/card_height"
+                app:layout_constraintTop_toBottomOf="@+id/view">
+
+                <ImageView
+                    android:id="@+id/icon_weight"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_weght"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/value_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60kg"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_weight" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_candy"
+                android:layout_width="140dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toStartOf="@id/card_favorite"
+                android:background="@drawable/card_details"
+                app:layout_constraintTop_toBottomOf="@+id/card_height"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/icon_candy"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_candy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/description_candy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Candtly"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_candy" />
+
+                <TextView
+                    android:id="@+id/value_candy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="160"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/description_candy" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_favorite"
+                android:layout_width="140dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/card_candy"
+                app:layout_constraintTop_toBottomOf="@+id/card_weight">
+
+                <ImageView
+                    android:id="@+id/icon_favorite"
+                    android:layout_width="61dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/baseline_favorite_border_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/add_favorite"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginRight="32dp"
+                    android:background="@drawable/buttom_favorite"
+                    android:text="Adicionar"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFEFE"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_favorite"
+                    app:layout_constraintVertical_bias="0.125" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/text_title_egg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Informações Egg"
+                android:textColor="#6A6969"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_candy" />
+
+            <View
+                android:id="@+id/view_egg"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C3C1C1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_egg" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_time"
+                android:layout_width="140dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_details"
+                app:layout_constraintEnd_toStartOf="@id/card_distance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_egg"
+                app:layout_constraintVertical_bias="0.183">
+
+                <ImageView
+                    android:id="@+id/icon_time"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_time"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/value_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="160m"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_time" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_distance"
+                android:layout_width="140dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/card_time"
+                app:layout_constraintTop_toBottomOf="@+id/view_egg">
+
+                <ImageView
+                    android:id="@+id/icon_distance"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_distance"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/value_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60kg"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_distance" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_change"
+                android:layout_width="140dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_details"
+                app:layout_constraintEnd_toStartOf="@id/card_distance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_time"
+                app:layout_constraintVertical_bias="0.183">
+
+                <ImageView
+                    android:id="@+id/icon_change"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_change"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/value_channge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="160m"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_change" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

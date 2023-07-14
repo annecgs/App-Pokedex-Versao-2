@@ -6,9 +6,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frontend.R
@@ -36,8 +38,7 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        binding.includeDate.tvMainDate.text = Helpers.getCalendarDate()
-        //binding.includeDate.tv_mainDate.text = Helpers.getCalendarDate()
+        (activity as AppCompatActivity).supportActionBar?.hide()
         setupUi()
         return root
     }
@@ -74,16 +75,11 @@ class HomeFragment : Fragment() {
 
     private fun setlistQueryAdapter(newList: MutableList<Pokemon>) = if (newList.isNotEmpty()) {
         setListAdapter(newList)
-        binding.widgetListEmpty.visibility = View.GONE
+
         binding.rvHome.visibility = View.VISIBLE
-        //binding.include2.root.visibility = View.VISIBLE
-        binding.include2.root.visibility = View.VISIBLE
         binding.progressBar.visibility = View.GONE
     } else {
         binding.rvHome.visibility = View.GONE
-        binding.include2.root.visibility = View.GONE
-        //binding.include2.root.visibility = View.VISIBLE
-        binding.widgetListEmpty.visibility = View.VISIBLE
         binding.progressBar.visibility = View.GONE
     }
 
@@ -98,8 +94,6 @@ class HomeFragment : Fragment() {
                     Log.d("INFO", "Success: ${listPokemons.data}")
                     binding.progressBar.visibility = View.GONE
                     binding.rvHome.visibility = View.VISIBLE
-                    //binding.include2.root.visibility = View.VISIBLE
-                    binding.include2.root.visibility = View.VISIBLE
 
                     val sharedPref =
                         activity?.getPreferences(Context.MODE_PRIVATE) ?: return@observe
@@ -114,7 +108,6 @@ class HomeFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                     errorFragment = ErrorFragment()
                     replaceFragment(ErrorFragment())
-                    //viewModel.mensagem = listPokemons.throwable.message.toString()
                     viewModel.mensagem = listPokemons.throwable.message.toString()
                     Log.d("INFO", "Error.cause: ${listPokemons.throwable.cause}")
                     Log.d("INFO", "Error: $listPokemons")
@@ -142,13 +135,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun goToFirstItemInRecyclerView() {
-        val linearLayoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.rvHome.layoutManager = linearLayoutManager
+        val layoutManager = GridLayoutManager(activity, 2)
+        binding.rvHome.layoutManager = layoutManager
         binding.rvHome.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                if (linearLayoutManager.findFirstVisibleItemPosition() == 0) {
+                if (layoutManager.findFirstVisibleItemPosition() == 0) {
                     binding.fab.visibility = View.GONE
                 } else binding.fab.visibility = View.VISIBLE
             }

@@ -20,4 +20,8 @@
     <string name="try_again_click">Click aqui para tentar novamente</string>
     <string name="mensagem_de_erro">Mensagem de erro</string>
 
+
+    <string name="title_01">Pikacho</string>
+    <string name="title_02">Dugtrio</string>
+    <string name="title_03">Mary Lou</string>
 </resources>

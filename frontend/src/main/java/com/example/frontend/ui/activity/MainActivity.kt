@@ -5,7 +5,9 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.frontend.R
 import com.example.frontend.databinding.ActivityMainBinding
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
         if (Build.VERSION.SDK_INT >= 21) {
             setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
-            window.statusBarColor = Color.TRANSPARENT
+            window.statusBarColor = Color.BLACK
         }
 
         if (savedInstanceState == null) {

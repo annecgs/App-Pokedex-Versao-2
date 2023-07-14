@@ -2,96 +2,86 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="220dp"
-    android:clickable="true"
-    android:focusable="true"
-    android:orientation="horizontal"
-    android:paddingHorizontal="16dp"
-    android:background="#191919">
+    android:layout_width="160dp"
+    android:layout_height="230dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp">
 
-    <ImageView
-        android:id="@+id/imagePokemon"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        tools:ignore="MissingConstraints"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="174dp"
-        android:layout_height="109dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="2dp"
-        android:orientation="vertical"
-        android:screenReaderFocusable="true"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imagePokemon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/nomePokemon"
-            android:layout_width="168dp"
-            android:layout_height="29dp"
-            android:layout_marginStart="22dp"
-            android:focusable="false"
-            android:text="Nome Pokemon"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imagePokemon"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="16dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_pokemon">
 
-        <TextView
-            android:id="@+id/candyPokemon"
-            android:layout_width="161dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="20dp"
-            android:focusable="false"
-            android:text="Candy Pokemon"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="italic"
-            app:layout_constraintStart_toEndOf="@+id/imagePokemon"
-            app:layout_constraintTop_toBottomOf="@+id/nomePokemon"
-            tools:ignore="MissingConstraints" />
+            <ImageView
+                android:id="@+id/imagePokemon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/nomePokemon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginEnd="10dp"
+                android:text="Nome Pokemon"
+                android:textAlignment="center"
+                android:textColor="#878888"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imagePokemon"
+                app:layout_constraintEnd_toEndOf="@+id/imagePokemon"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imagePokemon"
+                app:layout_constraintTop_toTopOf="@+id/imagePokemon"
+                app:layout_constraintVertical_bias="0.714" />
+
+            <ImageView
+                android:id="@+id/icon_favorite"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/baseline_favorite_border_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/go_details"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/baseline_chevron_right_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.92"
+                app:layout_constraintStart_toEndOf="@+id/icon_favorite"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-        <TextView
-            android:id="@+id/candyCount"
-            android:layout_width="161dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="9dp"
-            android:focusable="false"
-            android:text="Candy Pokemon"
-            android:textColor="@color/white"
-            android:textSize="13sp"
-            android:textStyle="italic"
-            app:layout_constraintStart_toEndOf="@+id/imagePokemon"
-            app:layout_constraintTop_toBottomOf="@+id/candyPokemon"
-            tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/iv_favoriteItem"
-        android:layout_width="32dp"
-        android:layout_height="35dp"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="22dp"
-        android:contentDescription="@string/simbolo_favorito"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.25"
-        app:srcCompat="@drawable/pokemon_favorito"
-        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

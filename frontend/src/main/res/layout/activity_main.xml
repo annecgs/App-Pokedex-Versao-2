@@ -5,17 +5,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#191919">
+    android:background="@color/color_background">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -23,10 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:background="#1C1C1C"
-        app:itemTextColor="@color/white"
-        app:itemIconTint="@color/white"
-        app:itemRippleColor="#A569BD"
+        android:background="@color/color_background"
+        app:itemTextColor="#878888"
+        app:itemIconTint="#878888"
+        app:itemRippleColor="@color/color_general"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -36,7 +27,6 @@
         android:id="@+id/nav_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#191919"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

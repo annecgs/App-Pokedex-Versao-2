@@ -28,25 +28,15 @@ class AdapterHome : ListAdapter<Pokemon, AdapterHome.ViewHolder>(DIFF_CALLBACK) 
 
         fun bind(x: Pokemon) {
             binding.nomePokemon.text = x.name
-            binding.candyPokemon.text = x.candy
-            binding.candyCount.text = "Quantidade de Candy " + x.candy_count
             Glide.with(binding.root.context)
                 .load(x.img)
                 .into(binding.imagePokemon)
-
-            getFavorite(x)
 
             binding.root.setOnClickListener {
                 onClickListener?.invoke(x.id)
             }
         }
 
-        private fun getFavorite(x: Pokemon) {
-            when (x.isFavorite) {
-                true -> binding.ivFavoriteItem.visibility = View.VISIBLE
-                false -> binding.ivFavoriteItem.visibility = View.GONE
-            }
-        }
     }
 
     companion object {

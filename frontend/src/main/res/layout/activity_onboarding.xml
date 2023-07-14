@@ -4,6 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_background"
     tools:context=".ui.activity.OnboardingActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/idViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.161" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/buttom_login"
+        android:text="Entrar"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#706E6E"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idViewPager" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

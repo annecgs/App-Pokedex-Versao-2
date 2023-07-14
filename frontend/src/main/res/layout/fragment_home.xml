@@ -4,9 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#191919"
-    android:layout_marginTop="60dp"
+    android:background="@color/black"
     tools:context=".ui.home.HomeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_pokemons"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/black"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Pokemons"
+        app:titleTextColor="@color/white" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -17,25 +31,14 @@
         android:queryHint="Search..."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_pokemons">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#191819"
+            android:background="@color/black"
             android:paddingBottom="8dp"
             android:screenReaderFocusable="true">
-
-            <include
-                android:id="@+id/includeDate"
-                layout="@layout/title_main"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView"
@@ -47,40 +50,26 @@
                 android:label="@string/app_name"
                 android:queryHint="@android:string/search_go"
                 app:defaultQueryHint="@string/name_pokemon"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/includeDate"
-                tools:ignore="MissingConstraints">
-
-            </androidx.appcompat.widget.SearchView>
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-
-    <include
-        android:id="@+id/include2"
-        layout="@layout/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="4dp"
-        android:background="@android:color/darker_gray"
-        android:visibility="gone"
-        tools:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/rv_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardView" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home"
-        android:layout_width="400dp"
-        android:layout_height="504dp"
-        android:background="@android:color/darker_gray"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:listitem="@layout/pokemon_item" />
@@ -97,50 +86,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/widgetListEmpty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/transparent"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="44dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/list_is_empty"
-            android:contentDescription="Imagem lista vazia"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_button"
-            android:backgroundTint="#CC9EA96D"
-            android:padding="12dp"
-            android:text="Não existe esse pokemon ;("
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
